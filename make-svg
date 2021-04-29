@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+go build
+termtosvg record -c "./dining-philosophers" run.cast
+sed -i '' -e '2d' -e '$d' run.cast
+termtosvg render run.cast run.svg -t window.svg
